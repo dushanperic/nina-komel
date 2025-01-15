@@ -1,10 +1,7 @@
 # Nina Komel portfolio website
 
-## [Astro js, Tailwind]
-
-```sh
-npm create astro@latest
-```
+- Astro js
+- Tailwind
 
 ## 🚀 Project Structure
 
