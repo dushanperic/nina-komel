@@ -5,12 +5,12 @@
     "slug": "na-istom-zadatku",
     "category": "Book",
     "images": [
-      "/src/assets/0dunav.png",
-      "/src/assets/1dunav.png",
-      "/src/assets/2dunav.png",
-      "/src/assets/3dunav.png",
-      "/src/assets/4dunav.png",
-      "/src/assets/5dunav.png"
+      "/nina-komel/src/assets/0dunav.png",
+      "/nina-komel/src/assets/1dunav.png",
+      "/nina-komel/src/assets/2dunav.png",
+      "/nina-komel/src/assets/3dunav.png",
+      "/nina-komel/src/assets/4dunav.png",
+      "/nina-komel/src/assets/5dunav.png"
     ]
   },
   {
@@ -19,9 +19,9 @@
     "slug": "dnk",
     "category": "Brand Design",
     "images": [
-      "/src/assets/dnk1-template.png",
-      "/src/assets/dnk2-template.png",
-      "/src/assets/dnk3-template.png"
+      "/nina-komel/src/assets/dnk1-template.png",
+      "/nina-komel/src/assets/dnk2-template.png",
+      "/nina-komel/src/assets/dnk3-template.png"
     ]
   },
   {
@@ -30,10 +30,10 @@
     "slug": "vojvodina-cook-book",
     "category": "Book",
     "images": [
-      "/src/assets/vojvodina-cbook-1.png",
-      "/src/assets/vojvodina-cbook-2.png",
-      "/src/assets/vojvodina-cbook-3.png",
-      "/src/assets/vojvodina-cbook-4.png"
+      "/nina-komel/src/assets/vojvodina-cbook-1.png",
+      "/nina-komel/src/assets/vojvodina-cbook-2.png",
+      "/nina-komel/src/assets/vojvodina-cbook-3.png",
+      "/nina-komel/src/assets/vojvodina-cbook-4.png"
     ]
   }
 ]
