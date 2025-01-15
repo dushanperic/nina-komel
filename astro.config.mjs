@@ -20,5 +20,5 @@ if (isBuild) {
 export default defineConfig({
   integrations: [tailwind()],
   site: BASE_URL,
-  ...(isBuild && { base: REPO_NAME }),
+  // ...(isBuild && { base: REPO_NAME }),
 });
