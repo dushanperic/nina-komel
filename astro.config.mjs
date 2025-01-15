@@ -9,8 +9,6 @@ const { REPO_NAME, LIVE_URL, LOCALHOST_URL } = loadEnv(
   ''
 );
 
-console.log({ REPO_NAME, LIVE_URL, LOCALHOST_URL });
-
 const SCRIPT = process.env.npm_lifecycle_script || '';
 const isBuild = SCRIPT.includes('astro build');
 let BASE_URL = LOCALHOST_URL;
