@@ -1,0 +1,59 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Header from '../components/Header.astro';
+import Container from '../components/Container.astro';
+import Works from '../components/Works.astro';
+import 'swiper/css';
+
+// Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
+// Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
+---
+
+<Layout>
+  <Header />
+  <Container>
+    <div
+      class="w-full h-full lg:grid lg:grid-cols-[1fr_3fr] gap-[var(--space-base)] relative"
+    >
+      <div class="pt-[65px]">
+        <p class="mb-1.5">Bio</p>
+        <ul class="mb-[var(--space-base)]">
+          <li>
+            <p>2010. Univeristy of Banja Luka</p>
+          </li>
+          <li>
+            <p>2012. Univeristy of Novi Sad</p>
+          </li>
+          <li>
+            <p>Novi Sad, Serbia</p>
+          </li>
+        </ul>
+
+        <p class="mb-1.5">Contact</p>
+        <ul class="mb-[var(--space-base)]">
+          <li>
+            <a
+              target="_blank"
+              href="mailto:ninakomel25@gmail.com"
+              class="hover:text-[var(--accent)] transition-all duration-200"
+              >ninakomel25@gmail.com</a
+            >
+          </li>
+          <li>
+            <a
+              target="_blank"
+              href="https://www.linkedin.com/in/nina-komel-7731337a/"
+              rel="nooener noreferrer"
+              class="hover:text-[var(--accent)] transition-all duration-200"
+              >LinkedIn</a
+            >
+          </li>
+        </ul>
+      </div>
+
+      <div class="lg:max-h-screen lg:overflow-y-scroll">
+        <Works />
+      </div>
+    </div>
+  </Container>
+</Layout>

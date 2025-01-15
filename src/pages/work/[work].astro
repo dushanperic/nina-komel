@@ -1,0 +1,148 @@
+---
+import works from '../../constants/works.json';
+import Header from '../../components/Header.astro';
+import WorkLayout from '../../layouts/WorkLayout.astro';
+import Container from '../../components/Container.astro';
+
+export function getStaticPaths() {
+  return works.map((work) => ({ params: { work: work.slug } }));
+}
+
+const { work: slug } = Astro.params;
+const work = works.find((el) => el.slug === slug);
+---
+
+<WorkLayout title={work?.title}>
+  <Header />
+  <Container class="h-full mt-[64px] lg:mt-0">
+    <div class="w-full h-full grid grid-cols-1 lg:grid-cols-[1fr_3fr] gap-4">
+      <div
+        class="w-full h-full order-2 lg:order-1 lg:pt-[64px] flex items-start justify-between"
+      >
+        <div class="w-full">
+          <p>{work?.title}</p>
+          <p>{work?.category}</p>
+        </div>
+        <p
+          class="counter-copy lg:hidden lg:invisible lg:h-0 m-0 text-xl text-[var(--accent)] w-full text-right leading-none"
+        >
+          /
+        </p>
+      </div>
+      <div
+        class="swiper work-swiper w-full max-h-full bg-[#000000] order-1 lg:order-2"
+      >
+        <div class="swiper-wrapper">
+          {
+            work?.images.map((path) => (
+              <div class="swiper-slide">
+                <div
+                  class="w-full h-full bg-center  bg-contain lg:bg-contain bg-no-repeat min-h-[50vh] lg:min-h-[80vh]"
+                  style={`background-image: url(${path})`}
+                />
+              </div>
+            ))
+          }
+        </div>
+        <div
+          class="swiper-button-prev h-full w-0 md:w-[20%] lg:w-[40%] absolute top-0 bottom-0 m-0 group"
+        >
+          <div class="relative w-full h-full cursor-none">
+            <p
+              class="counter-copy counter-cursor opacity-0 group-hover:opacity-100 absolute select-none text-3xl text-[var(--accent)]"
+            >
+            </p>
+          </div>
+        </div>
+        <div
+          class="swiper-button-next h-full w-0 md:w-[20%] lg:w-[40%] absolute top-0 bottom-0 m-0 group"
+        >
+          <div class="relative w-full h-full cursor-none">
+            <p
+              class="counter-copy counter-cursor whitespace-nowrap opacity-0 group-hover:opacity-100 absolute select-none text-3xl text-[var(--accent)]"
+            >
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </Container>
+</WorkLayout>
+
+<script>
+  import Swiper from 'swiper';
+  import { Navigation, Pagination, Scrollbar } from 'swiper/modules';
+  import {
+    handleCursorCopyPosition,
+    getSlideCounterString,
+  } from '../../utils/common';
+  import 'swiper/css';
+
+  document.addEventListener('astro:page-load', () => {
+    const counterCursors = Array.from(
+      document.querySelectorAll('.counter-cursor')
+    ) as Array<HTMLParagraphElement>;
+
+    const counterCopy = Array.from(
+      document.querySelectorAll('.counter-copy')
+    ) as Array<HTMLParagraphElement>;
+
+    Swiper.use([Navigation, Pagination, Scrollbar]);
+
+    const swiper = new Swiper('.work-swiper', {
+      loop: true,
+      parallax: true,
+      navigation: {
+        nextEl: '.swiper-button-next',
+        prevEl: '.swiper-button-prev',
+      },
+      pagination: {
+        el: '.swiper-pagination',
+      },
+      scrollbar: {
+        el: '.swiper-scrollbar',
+      },
+      on: {
+        init: function (slide) {
+          counterCopy.forEach((el) => {
+            el.innerHTML = getSlideCounterString(slide);
+          });
+        },
+        slideChange: function (slide) {
+          counterCopy.forEach((el) => {
+            el.innerHTML = getSlideCounterString(slide);
+          });
+        },
+      },
+    });
+
+    const prevBtn = document.querySelector('.swiper-button-prev') as any;
+    const nextBtn = document.querySelector('.swiper-button-next') as any;
+
+    if (prevBtn) {
+      prevBtn.addEventListener('mousemove', (e: MouseEvent) =>
+        handleCursorCopyPosition(e, prevBtn, counterCursors)
+      );
+    }
+
+    if (nextBtn) {
+      nextBtn.addEventListener('mousemove', (e: MouseEvent) =>
+        handleCursorCopyPosition(e, nextBtn, counterCursors)
+      );
+    }
+
+    return () => {
+      if (prevBtn) {
+        prevBtn.remove('mousemove', (e: MouseEvent) =>
+          handleCursorCopyPosition(e, prevBtn, counterCursors)
+        );
+      }
+
+      if (nextBtn) {
+        nextBtn.remove('mousemove', (e: MouseEvent) =>
+          handleCursorCopyPosition(e, nextBtn, counterCursors)
+        );
+      }
+    };
+  });
+</script>

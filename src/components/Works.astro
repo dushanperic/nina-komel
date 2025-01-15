@@ -1,0 +1,87 @@
+---
+import Work from './Work.astro';
+import works from '../constants/works.json';
+---
+
+{works.map((item) => <Work work={item} />)}
+
+<script>
+  import Swiper from 'swiper';
+  import works from '../constants/works.json';
+  import { Navigation } from 'swiper/modules';
+  import {
+    handleCursorCopyPosition,
+    getSlideCounterString,
+  } from '../utils/common';
+
+  document.addEventListener('astro:page-load', () => {
+    Swiper.use([Navigation]);
+
+    works.forEach((element) => {
+      const counterCopyElements = Array.from(
+        document.querySelectorAll(`.counter-copy-${element.id}`)
+      ) as Array<HTMLParagraphElement>;
+
+      const counterCursorElements = Array.from(
+        document.querySelectorAll(`.counter-cursor-${element.id}`)
+      ) as Array<HTMLParagraphElement>;
+
+      const swiper = new Swiper(`.swiper-${element.id}`, {
+        loop: true,
+        parallax: true,
+        navigation: {
+          nextEl: '.swiper-button-next',
+          prevEl: '.swiper-button-prev',
+        },
+        on: {
+          init: function (slide) {
+            counterCopyElements.forEach((el) => {
+              el.textContent = getSlideCounterString(slide);
+            });
+          },
+          slideChange: function (slide) {
+            if (!slide) return;
+
+            counterCopyElements.forEach((el) => {
+              el.textContent = getSlideCounterString(slide);
+            });
+          },
+        },
+      });
+
+      const prevBtn = document.querySelector(
+        `.swiper-button-prev-${element.id}`
+      ) as any;
+
+      const nextBtn = document.querySelector(
+        `.swiper-button-next-${element.id}`
+      ) as any;
+
+      if (prevBtn) {
+        prevBtn.addEventListener('mousemove', (e: MouseEvent) =>
+          handleCursorCopyPosition(e, prevBtn, counterCursorElements)
+        );
+      }
+
+      if (nextBtn) {
+        nextBtn.addEventListener('mousemove', (e: MouseEvent) =>
+          handleCursorCopyPosition(e, nextBtn, counterCursorElements)
+        );
+      }
+
+      return () => {
+        if (prevBtn) {
+          prevBtn.remove('mousemove', (e: MouseEvent) =>
+            handleCursorCopyPosition(e, prevBtn, counterCursorElements)
+          );
+        }
+
+        if (nextBtn) {
+          nextBtn.remove('mousemove', (e: MouseEvent) =>
+            handleCursorCopyPosition(e, nextBtn, counterCursorElements)
+          );
+        }
+      };
+    });
+  });
+</script>

@@ -1,0 +1,39 @@
+[
+  {
+    "id": 1,
+    "title": "Na istom zadatku",
+    "slug": "na-istom-zadatku",
+    "category": "Book",
+    "images": [
+      "/src/assets/0dunav.png",
+      "/src/assets/1dunav.png",
+      "/src/assets/2dunav.png",
+      "/src/assets/3dunav.png",
+      "/src/assets/4dunav.png",
+      "/src/assets/5dunav.png"
+    ]
+  },
+  {
+    "id": 2,
+    "title": "DNK",
+    "slug": "dnk",
+    "category": "Brand Design",
+    "images": [
+      "/src/assets/dnk1-template.png",
+      "/src/assets/dnk2-template.png",
+      "/src/assets/dnk3-template.png"
+    ]
+  },
+  {
+    "id": 3,
+    "title": "Vojvodina cook book",
+    "slug": "vojvodina-cook-book",
+    "category": "Book",
+    "images": [
+      "/src/assets/vojvodina-cbook-1.png",
+      "/src/assets/vojvodina-cbook-2.png",
+      "/src/assets/vojvodina-cbook-3.png",
+      "/src/assets/vojvodina-cbook-4.png"
+    ]
+  }
+]

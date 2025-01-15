@@ -1,0 +1,59 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Header from '../components/Header.astro';
+import Container from '../components/Container.astro';
+---
+
+<Layout>
+  <Header />
+  <Container class="h-full">
+    <div
+      class="w-full h-full lg:grid lg:grid-cols-[1fr_3fr] gap-[var(--space-base)] relative"
+    >
+      <div class="pt-[65px]">
+        <p class="mb-1.5">Bio</p>
+        <ul class="mb-[var(--space-base)]">
+          <li>
+            <p>2010. Univeristy of Banja Luka</p>
+          </li>
+          <li>
+            <p>2012. Univeristy of Novi Sad</p>
+          </li>
+          <li>
+            <p>Novi Sad, Serbia</p>
+          </li>
+        </ul>
+
+        <p class="mb-1.5">Contact</p>
+        <ul class="mb-[var(--space-base)]">
+          <li>
+            <a
+              target="_blank"
+              href="mailto:ninakomel25@gmail.com"
+              class="hover:text-[var(--accent)] transition-all duration-200"
+              >ninakomel25@gmail.com</a
+            >
+          </li>
+          <li>
+            <a
+              target="_blank"
+              href="https://www.linkedin.com/in/nina-komel-7731337a/"
+              rel="nooener noreferrer"
+              class="hover:text-[var(--accent)] transition-all duration-200"
+              >LinkedIn</a
+            >
+          </li>
+        </ul>
+      </div>
+      <div class="w-full h-full relative">
+        <div
+          class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 text-center"
+        >
+          <p class="font-bold">404</p>
+          <p>Uuups, nothing here...</p>
+          <a href="/">Go Back</a>
+        </div>
+      </div>
+    </div>
+  </Container>
+</Layout>

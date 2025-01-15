@@ -1,0 +1,94 @@
+:root {
+  --foreground: #181717;
+  --background: #fbfbfb;
+  --accent: #d81111;
+  --space-base: 1rem;
+  --typo-base: 1rem;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --foreground: #fbfbfb;
+    --background: #181717;
+    --accent: #d81111;
+  }
+}
+
+* {
+  scrollbar-color: var(--accent) transparent;
+}
+
+html {
+  font-family: 'Mona Sans', serif;
+  font-optical-sizing: auto;
+  font-variation-settings: 'wdth' 100;
+}
+
+html,
+body {
+  margin: 0;
+  width: 100%;
+  color: var(--foreground);
+  background-color: var(--background);
+  transition: all 250ms ease-in;
+}
+
+a,
+p,
+li,
+span {
+  font-size: var(--typo-base);
+  line-height: 1.5;
+}
+
+a {
+  text-decoration: underline !important;
+}
+
+/* width */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: var(--accent);
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #888;
+  border-radius: 5px;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: var(--accent);
+}
+
+/* Tailwind lg screen size */
+/* @media screen and (min-width: 1024px) {
+  :root {
+    --space-base: 1.5rem;
+  }
+} */
+
+/* Swiper nav buttons */
+.swiper-button-next::after,
+.swiper-button-prev::after {
+  content: '';
+}
+
+@media screen and (min-width: 1900px) {
+  :root {
+    --space-base: 1.5rem;
+    --typo-base: 1.7rem;
+  }
+}
+
+@media screen and (min-width: 2560px) {
+  :root {
+    --space-base: 2rem;
+    --typo-base: 2rem;
+  }
+}

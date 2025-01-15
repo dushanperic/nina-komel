@@ -1,0 +1,102 @@
+---
+interface IWork {
+  id: number;
+  title: string;
+  slug: string;
+  category: string;
+  images: Array<any>;
+}
+
+export interface Props {
+  work: IWork;
+}
+
+const { work } = Astro.props as Props;
+---
+
+<section class="mb-[calc(var(--space-base)_*_1.5)]">
+  <div
+    class:list={['swiper', `swiper-${work.id}`, 'w-full h-full bg-[#000000]']}
+  >
+    <div class="swiper-wrapper">
+      {
+        work.images.map((path) => (
+          <div class="swiper-slide">
+            <div
+              class="w-full h-[50vw] lg:h-auto bg-center bg-contain bg-no-repeat min-h-[30vh] lg:min-h-[85vh]"
+              style={`background-image: url(${path})`}
+            />
+          </div>
+        ))
+      }
+    </div>
+    <!--  Navigation buttons -->
+    <div
+      class:list={[
+        'swiper-button-prev h-full w-0 hidden invisible lg:block lg:visible md:w-[20%] lg:w-[40%] absolute top-0 bottom-0 m-0 group',
+        `swiper-button-prev-${work.id}`,
+      ]}
+    >
+      <div class="relative w-full h-full cursor-none">
+        <p
+          class:list={[
+            'button-copy opacity-0 group-hover:opacity-100 absolute select-none text-3xl text-[var(--accent)]',
+            `counter-copy-${work.id}`,
+            `counter-cursor-${work.id}`,
+          ]}
+        >
+        </p>
+      </div>
+    </div>
+    <div
+      class:list={[
+        'swiper-button-next h-full w-0 invisible lg:block lg:visible md:w-[20%] lg:w-[40%] absolute top-0 bottom-0 m-0 group',
+        `swiper-button-next-${work.id}`,
+      ]}
+    >
+      <div class="relative w-full h-full cursor-none">
+        <p
+          class:list={[
+            'button-copy opacity-0 group-hover:opacity-100 absolute select-none text-3xl text-[var(--accent)]',
+            `counter-copy-${work.id}`,
+            `counter-cursor-${work.id}`,
+          ]}
+        >
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <div class="block mt-[var(--space-base)]">
+    <div class="flex items-start justify-between">
+      <div>
+        <a
+          href={`work/${work.slug}`}
+          class="hover:text-[var(--accent)] transition-all duration-200"
+        >
+          <p class="m-0 p-0 whitespace-nowrap">{work.title}</p>
+        </a>
+        <p class="m-0 p-0">{work.category}</p>
+      </div>
+      <p
+        class:list={[
+          'lg:hidden lg:invisible text-xl text-[var(--accent)] w-full text-right leading-none',
+          `counter-copy-${work.id}`,
+        ]}
+      >
+        /
+      </p>
+    </div>
+  </div>
+</section>
+
+<style>
+  a {
+    text-decoration: underline !important;
+  }
+
+  .swiper-button-next::after,
+  .swiper-button-prev::after {
+    content: '';
+  }
+</style>
