@@ -20,11 +20,11 @@ const { work } = Astro.props as Props;
   >
     <div class="swiper-wrapper">
       {
-        work.images.map((path) => (
+        work.images.map((image: ImageMetadata) => (
           <div class="swiper-slide">
             <div
               class="w-full h-[50vw] lg:h-auto bg-center bg-contain bg-no-repeat min-h-[30vh] lg:min-h-[85vh]"
-              style={`background-image: url(${path})`}
+              style={`background-image: url(${image.src})`}
             />
           </div>
         ))

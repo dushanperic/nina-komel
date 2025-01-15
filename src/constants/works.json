@@ -4,36 +4,20 @@
     "title": "Na istom zadatku",
     "slug": "na-istom-zadatku",
     "category": "Book",
-    "images": [
-      "/nina-komel/src/assets/0dunav.png",
-      "/nina-komel/src/assets/1dunav.png",
-      "/nina-komel/src/assets/2dunav.png",
-      "/nina-komel/src/assets/3dunav.png",
-      "/nina-komel/src/assets/4dunav.png",
-      "/nina-komel/src/assets/5dunav.png"
-    ]
+    "images": []
   },
   {
     "id": 2,
     "title": "DNK",
     "slug": "dnk",
     "category": "Brand Design",
-    "images": [
-      "/nina-komel/src/assets/dnk1-template.png",
-      "/nina-komel/src/assets/dnk2-template.png",
-      "/nina-komel/src/assets/dnk3-template.png"
-    ]
+    "images": []
   },
   {
     "id": 3,
     "title": "Vojvodina cook book",
     "slug": "vojvodina-cook-book",
     "category": "Book",
-    "images": [
-      "/nina-komel/src/assets/vojvodina-cbook-1.png",
-      "/nina-komel/src/assets/vojvodina-cbook-2.png",
-      "/nina-komel/src/assets/vojvodina-cbook-3.png",
-      "/nina-komel/src/assets/vojvodina-cbook-4.png"
-    ]
+    "images": []
   }
 ]

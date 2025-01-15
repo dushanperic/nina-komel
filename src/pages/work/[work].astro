@@ -1,15 +1,15 @@
 ---
-import works from '../../constants/works.json';
 import Header from '../../components/Header.astro';
 import WorkLayout from '../../layouts/WorkLayout.astro';
 import Container from '../../components/Container.astro';
+import { worksWithImages } from '../../constants/images-data';
 
 export function getStaticPaths() {
-  return works.map((work) => ({ params: { work: work.slug } }));
+  return worksWithImages.map((work) => ({ params: { work: work.slug } }));
 }
 
 const { work: slug } = Astro.params;
-const work = works.find((el) => el.slug === slug);
+const work = worksWithImages.find((el) => el.slug === slug);
 ---
 
 <WorkLayout title={work?.title}>
@@ -34,11 +34,11 @@ const work = works.find((el) => el.slug === slug);
       >
         <div class="swiper-wrapper">
           {
-            work?.images.map((path) => (
+            work?.images.map((image) => (
               <div class="swiper-slide">
                 <div
                   class="w-full h-full bg-center  bg-contain lg:bg-contain bg-no-repeat min-h-[50vh] lg:min-h-[80vh]"
-                  style={`background-image: url(${path})`}
+                  style={`background-image: url(${image.src})`}
                 />
               </div>
             ))

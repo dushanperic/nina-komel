@@ -1,9 +1,9 @@
 ---
 import Work from './Work.astro';
-import works from '../constants/works.json';
+import { worksWithImages } from '../constants/images-data';
 ---
 
-{works.map((item) => <Work work={item} />)}
+{worksWithImages.map((item) => <Work work={item} />)}
 
 <script>
   import Swiper from 'swiper';
