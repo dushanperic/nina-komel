@@ -1,5 +1,8 @@
 ---
 import Container from './Container.astro';
+const BASE_URL = import.meta.env.BASE_URL;
+
+console.log('BASE_URL', BASE_URL);
 ---
 
 <header
@@ -7,6 +10,6 @@ import Container from './Container.astro';
   id="site-header"
 >
   <Container>
-    <a href="/" class="font-medium">Nina Komel</a>
+    <a href={`${BASE_URL}`} class="font-medium">Nina Komel</a>
   </Container>
 </header>
