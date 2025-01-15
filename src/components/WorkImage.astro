@@ -5,12 +5,12 @@ import { Image } from 'astro:assets';
 const { filePath } = Astro.props;
 
 const images = import.meta.glob<{ default: ImageMetadata }>(
-  '/src/assets/*.{jpeg,jpg,png,gif}'
+  '/nina-komel/src/assets/*.{jpeg,jpg,png,gif}'
 );
 
 if (!images[filePath])
   throw new Error(
-    `"${filePath}" does not exist in glob: "src/assets/*.{jpeg,jpg,png,gif,svg}"`
+    `"${filePath}" does not exist in glob: "/nina-komel/src/assets/*.{jpeg,jpg,png,gif,svg}"`
   );
 ---
 
