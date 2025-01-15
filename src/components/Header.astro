@@ -1,6 +1,5 @@
 ---
 import Container from './Container.astro';
-const BASE_URL = import.meta.env.PUBLIC_REPO_NAME;
 ---
 
 <header
@@ -8,6 +7,6 @@ const BASE_URL = import.meta.env.PUBLIC_REPO_NAME;
   id="site-header"
 >
   <Container>
-    <a href={`${BASE_URL}`} class="font-medium">Nina Komel</a>
+    <a href={`/nina-komel`} class="font-medium">Nina Komel</a>
   </Container>
 </header>

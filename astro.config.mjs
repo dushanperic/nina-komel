@@ -19,6 +19,6 @@ if (isBuild) {
 
 export default defineConfig({
   integrations: [tailwind()],
-  site: BASE_URL,
-  base: REPO_NAME,
+  site: 'https://dushanperic.github.io',
+  base: 'nina-komel',
 });

@@ -1,6 +1,4 @@
 ---
-const BASE_URL = import.meta.env.PUBLIC_REPO_NAME;
-
 interface IWork {
   id: number;
   title: string;
@@ -73,7 +71,7 @@ const { work } = Astro.props as Props;
     <div class="flex items-start justify-between">
       <div>
         <a
-          href={`${BASE_URL}work/${work.slug}`}
+          href={`/nina-komel/work/${work.slug}`}
           class="hover:text-[var(--accent)] transition-all duration-200"
         >
           <p class="m-0 p-0 whitespace-nowrap">{work.title}</p>
