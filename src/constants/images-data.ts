@@ -1,10 +1,6 @@
 import type { ImageMetadata } from 'astro';
 import works from '../constants/works.json';
 
-const images = import.meta.glob<{ default: ImageMetadata }>(
-  '/src/assets/*.{jpeg,jpg,png,gif}'
-);
-
 import dnk1 from '../assets/0dnk.png';
 import dnk2 from '../assets/1dnk.png';
 import dnk3 from '../assets/3dnk.png';
