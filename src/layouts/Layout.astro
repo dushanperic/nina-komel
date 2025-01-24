@@ -1,6 +1,7 @@
 ---
 import { ClientRouter, fade } from 'astro:transitions';
 import '../styles/global.css';
+const BASE_URL = import.meta.env.BASE_URL;
 ---
 
 <!doctype html>
@@ -19,12 +20,28 @@ import '../styles/global.css';
       rel="stylesheet"
     />
 
+    <!-- Facebook Meta Tags -->
+    <meta property="og:url" content={BASE_URL} />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Nina Komel" />
+    <meta property="og:description" content="Nina Komel works" />
+    <meta property="og:image" content={`${BASE_URL}/og-image.png`} />
+
+    <!-- Twitter Meta Tags -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta property="twitter:domain" content={BASE_URL} />
+    <meta property="twitter:url" content={BASE_URL} />
+    <meta name="twitter:title" content="Nina Komel" />
+    <meta name="twitter:description" content="Nina Komel works" />
+    <meta name="twitter:image" content={`${BASE_URL}/og-image.png`} />
+
     <link
       rel="stylesheet"
       href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
     />
 
     <title>Nina Komel</title>
+    <meta name="description" content="Nina Komel works" />
     <ClientRouter />
   </head>
   <body
