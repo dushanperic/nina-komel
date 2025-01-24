@@ -1,5 +1,5 @@
 :root {
-  --foreground: #181717;
+  --foreground: #000000;
   --background: #fbfbfb;
   --accent: #d81111;
   --space-base: 1rem;
@@ -9,7 +9,7 @@
 @media (prefers-color-scheme: dark) {
   :root {
     --foreground: #fbfbfb;
-    --background: #181717;
+    --background: #000000;
     --accent: #d81111;
   }
 }
