@@ -10,22 +10,24 @@ import dunav3 from '../assets/2dunav.png';
 import dunav4 from '../assets/3dunav.png';
 import dunav5 from '../assets/4dunav.png';
 import dunav6 from '../assets/5dunav.png';
-import vojvodina1 from '../assets/vojvodina-cbook-1.png';
-import vojvodina2 from '../assets/vojvodina-cbook-2.png';
-import vojvodina3 from '../assets/vojvodina-cbook-3.png';
-import vojvodina4 from '../assets/vojvodina-cbook-4.png';
-import vojvodina5 from '../assets/vojvodina-cbook-5.png';
+import vojvodina0 from '../assets/0kuvar.jpg';
+import vojvodina1 from '../assets/1kuvar.jpg';
+import vojvodina2 from '../assets/2kuvar.jpg';
+import vojvodina3 from '../assets/3kuvar.jpg';
+import vojvodina4 from '../assets/4kuvar.jpg';
+import sokKoridor from '../assets/sok.gif';
 
 export const IMAGES_BY_SLUG: { [key: string]: ImageMetadata[] } = {
   dnk: [dnk1, dnk2, dnk3],
   'na-istom-zadatku': [dunav1, dunav2, dunav3, dunav4, dunav5, dunav6],
   'vojvodina-cook-book': [
+    vojvodina0,
     vojvodina1,
     vojvodina2,
     vojvodina3,
     vojvodina4,
-    vojvodina5,
   ],
+  'sok-koridor': [sokKoridor],
 };
 
 export const worksWithImages = works.map((work) => ({

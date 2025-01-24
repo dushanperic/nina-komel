@@ -19,5 +19,12 @@
     "slug": "vojvodina-cook-book",
     "category": "Book",
     "images": []
+  },
+  {
+    "id": 4,
+    "title": "Sok koridor",
+    "slug": "sok-koridor",
+    "category": "Posters",
+    "images": []
   }
 ]
