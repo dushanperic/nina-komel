@@ -6,12 +6,12 @@ import dnk2 from '../assets/dnk/01dnk.png';
 import dnk3 from '../assets/dnk/02dnk.png';
 import dnk4 from '../assets/dnk/03dnk.png';
 
-import dunav1 from '../assets/0dunav.png';
-import dunav2 from '../assets/1dunav.png';
-import dunav3 from '../assets/2dunav.png';
-import dunav4 from '../assets/3dunav.png';
-import dunav5 from '../assets/4dunav.png';
-import dunav6 from '../assets/5dunav.png';
+import dunav1 from '../assets/dunav/0dunav.png';
+import dunav2 from '../assets/dunav/1dunav.png';
+import dunav3 from '../assets/dunav/2dunav.png';
+import dunav4 from '../assets/dunav/3dunav.png';
+import dunav5 from '../assets/dunav/4dunav.png';
+import dunav6 from '../assets/dunav/5dunav.png';
 
 import vojvodina1 from '../assets/cook-book/1kuvar.jpg';
 import vojvodina2 from '../assets/cook-book/2kuvar.jpg';
