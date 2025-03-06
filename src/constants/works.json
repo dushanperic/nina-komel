@@ -26,5 +26,19 @@
     "slug": "sok-koridor",
     "category": "Posters",
     "images": []
+  },
+  {
+    "id": 5,
+    "title": "NQODE",
+    "slug": "nqode",
+    "category": "Indentity/Brand",
+    "images": []
+  },
+  {
+    "id": 6,
+    "title": "Puzzle",
+    "slug": "puzzle",
+    "category": "Print / Puzzle",
+    "images": []
   }
 ]

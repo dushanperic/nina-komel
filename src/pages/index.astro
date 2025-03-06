@@ -4,9 +4,6 @@ import Header from '../components/Header.astro';
 import Container from '../components/Container.astro';
 import Works from '../components/Works.astro';
 import 'swiper/css';
-
-// Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
-// Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
 ---
 
 <Layout>
@@ -15,40 +12,124 @@ import 'swiper/css';
     <div
       class="w-full h-full lg:grid lg:grid-cols-[1fr_3fr] gap-[var(--space-base)] relative"
     >
-      <div class="pt-[65px]">
-        <p class="mb-1.5">Bio</p>
-        <ul class="mb-[var(--space-base)]">
-          <li>
-            <p>2010. Univeristy of Banja Luka</p>
-          </li>
-          <li>
-            <p>2012. Univeristy of Novi Sad</p>
-          </li>
-          <li>
-            <p>Novi Sad, Serbia</p>
-          </li>
-        </ul>
+      <div class="pt-[65px] lg:max-h-screen lg:overflow-y-auto">
+        <div class="tab">
+          <div class="tab-head cursor-pointer">
+            <h3>Contact</h3>
+          </div>
+          <div class="tab-panel">
+            <ul class="[&>li]:mb-4">
+              <li>
+                <a
+                  target="_blank"
+                  href="mailto:ninakomel25@gmail.com"
+                  class="hover:text-[var(--accent)] transition-all duration-200"
+                  >ninakomel25@gmail.com</a
+                >
+              </li>
+              <li>
+                <a
+                  target="_blank"
+                  href="https://www.linkedin.com/in/nina-komel-7731337a/"
+                  rel="nooener noreferrer"
+                  class="hover:text-[var(--accent)] transition-all duration-200"
+                  >LinkedIn</a
+                >
+              </li>
+            </ul>
+          </div>
+        </div>
 
-        <p class="mb-1.5">Contact</p>
-        <ul class="mb-[var(--space-base)]">
-          <li>
-            <a
-              target="_blank"
-              href="mailto:ninakomel25@gmail.com"
-              class="hover:text-[var(--accent)] transition-all duration-200"
-              >ninakomel25@gmail.com</a
-            >
-          </li>
-          <li>
-            <a
-              target="_blank"
-              href="https://www.linkedin.com/in/nina-komel-7731337a/"
-              rel="nooener noreferrer"
-              class="hover:text-[var(--accent)] transition-all duration-200"
-              >LinkedIn</a
-            >
-          </li>
-        </ul>
+        <div class="tab">
+          <div class="tab-head cursor-pointer">
+            <h3>Bio</h3>
+          </div>
+          <div class="tab-panel">
+            <ul class="[&>li]:mb-4">
+              <li>
+                <p>
+                  2012. Master Artist - New Visual Media - Intermediate
+                  Research;
+                </p>
+                <p>University of Novi Sad, Academy of Arts Novi Sad, Serbia</p>
+              </li>
+              <li>
+                <p>2010. Academic painter - professor of fine arts;</p>
+                <p>
+                  University of Banja Luka, Academy of Arts Banja Luka, RS, BiH
+                </p>
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="tab">
+          <div class="tab-head cursor-pointer">
+            <h3>Experience</h3>
+          </div>
+          <div class="tab-panel">
+            <ul class="[&>li]:mb-4">
+              <li>
+                <p>Digital Painter / Storyteller - Hubstuck</p>
+                <p>Trg Feher Feranca, Novi Sad, Serbia</p>
+              </li>
+
+              <li>
+                <p>2D artist - Eipix game, Marka Miljanova</p>
+                <p>11, Novi Sad, Serbia</p>
+              </li>
+
+              <li>
+                <p>Graphic Designer - Kitchen&GoodWolf,</p>
+                <p>Vojvodjanskih brigada 4, Novi Sad, Serbia</p>
+              </li>
+
+              <li>
+                <p>Graphic Designer -Art&Code, Cartizz</p>
+                <p>Bulеvar oslobođenja, Novi Sad</p>
+              </li>
+
+              <li>
+                <p>Graphic Designer (Remote) -HTEC Group, Kis Ernea 4,</p>
+                <p>Novi Sad</p>
+              </li>
+
+              <li>
+                <p>
+                  Graphic Designer and illustrator (Remote) - Active Collab,
+                </p>
+                <p>Bulevar Oslobodjenja, Novi Sad</p>
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="tab">
+          <div class="tab-head cursor-pointer">
+            <h3>Tools</h3>
+          </div>
+          <div class="tab-panel">
+            <ul class="[&>li]:mb-2">
+              <li>
+                <p class="mb-0">Adobe Photohop</p>
+              </li>
+              <li>
+                <p class="mb-0">Adobe Ilustrator</p>
+              </li>
+              <li>
+                <p class="mb-0">Adobe InDesign</p>
+              </li>
+              <li><p class="mb-0">Adobe XD</p></li>
+              <li>
+                <p class="mb-0">Adobe Premiere</p>
+              </li>
+              <li>
+                <p class="mb-0">Figma</p>
+              </li>
+              <li><p class="mb-0">Microsoft Office</p></li>
+            </ul>
+          </div>
+        </div>
       </div>
 
       <div class="lg:max-h-screen lg:overflow-y-scroll">
@@ -57,3 +138,80 @@ import 'swiper/css';
     </div>
   </Container>
 </Layout>
+
+<script>
+  const initTabs = () => {
+    const tabs = document.querySelectorAll('.tab');
+    const closeTab = (el: HTMLDivElement) => {
+      const tabPanel = el.querySelector('.tab-panel') as HTMLDivElement;
+      el.classList.remove('active');
+      //@ts-ignore
+      tabPanel.style.maxHeight = null;
+    };
+
+    const openTab = (el: any) => {
+      const tabPanel = el.querySelector('.tab-panel');
+      el.classList.add('active');
+      tabPanel.style.maxHeight = tabPanel.scrollHeight + 'px';
+    };
+
+    tabs.forEach((el) => {
+      const head = el.querySelector('.tab-head');
+      const panel = el.querySelector('.tab-panel');
+
+      head?.addEventListener('click', (event: any) => {
+        const target = event?.currentTarget;
+        const parent = target.parentElement;
+
+        if (parent.classList.contains('active')) {
+          closeTab(el as HTMLDivElement);
+          return;
+        }
+
+        tabs.forEach((el) => closeTab(el as HTMLDivElement));
+        //@ts-ignore
+        if (panel?.style?.maxHeigh) {
+          closeTab(el as HTMLDivElement);
+        } else {
+          openTab(el);
+        }
+      });
+    });
+  };
+
+  initTabs();
+
+  // Re-initialize after swapping pages
+  document.addEventListener('astro:after-swap', initTabs);
+</script>
+
+<style>
+  .tab-head h3 {
+    width: auto;
+    display: inline-block;
+    padding-bottom: calc(var(--space-base) / 2);
+  }
+
+  .tab-head h3::after {
+    content: '';
+    display: block;
+    width: 0;
+    height: 2px;
+    background-color: var(--foreground);
+    transition: all 0.25s ease-out;
+  }
+
+  .tab-head h3:hover::after {
+    width: 100%;
+  }
+  .tab-panel {
+    max-height: 0;
+    overflow-y: hidden;
+    transition: all 0.25s ease-out;
+    padding-left: calc(var(--space-base) / 2);
+  }
+  .active .tab-panel {
+    margin-top: var(--space-base);
+    margin-bottom: var(--space-base);
+  }
+</style>
