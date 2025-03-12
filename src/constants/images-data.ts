@@ -13,6 +13,7 @@ import dunav4 from '../assets/dunav/3dunav.png';
 import dunav5 from '../assets/dunav/4dunav.png';
 import dunav6 from '../assets/dunav/5dunav.png';
 
+import vojvodina0 from '../assets/cook-book/0kuvar.jpg';
 import vojvodina1 from '../assets/cook-book/1kuvar.jpg';
 import vojvodina2 from '../assets/cook-book/2kuvar.jpg';
 import vojvodina3 from '../assets/cook-book/3kuvar.jpg';
@@ -32,7 +33,13 @@ import puzzle2 from '../assets/puzzle/01puzzle.png';
 export const IMAGES_BY_SLUG: { [key: string]: ImageMetadata[] } = {
   dnk: [dnk1, dnk2, dnk3, dnk4],
   'na-istom-zadatku': [dunav1, dunav2, dunav3, dunav4, dunav5, dunav6],
-  'vojvodina-cook-book': [vojvodina1, vojvodina2, vojvodina3, vojvodina4],
+  'vojvodina-cook-book': [
+    vojvodina0,
+    vojvodina1,
+    vojvodina2,
+    vojvodina3,
+    vojvodina4,
+  ],
   'sok-koridor': [sokKoridor],
   nqode: [nqode1, nqode2, nqode3, nqode4, nqode5],
   puzzle: [puzzle1, puzzle2],
