@@ -19,7 +19,8 @@ import vojvodina2 from '../assets/cook-book/2kuvar.jpg';
 import vojvodina3 from '../assets/cook-book/3kuvar.jpg';
 import vojvodina4 from '../assets/cook-book/4kuvar.jpg';
 
-import sokKoridor from '../assets/shok/sok.gif';
+import sokKoridor1 from '../assets/shok/sok.gif';
+import sokKoridor2 from '../assets/shok/01sokkoridor.png';
 
 import nqode1 from '../assets/nqode/00nqode.png';
 import nqode2 from '../assets/nqode/01nqode.png';
@@ -29,6 +30,11 @@ import nqode5 from '../assets/nqode/04nqode.png';
 
 import puzzle1 from '../assets/puzzle/00puzzle.png';
 import puzzle2 from '../assets/puzzle/01puzzle.png';
+
+import fourWaters1 from '../assets/4vode/004vode.png';
+import fourWaters2 from '../assets/4vode/014vode.png';
+import fourWaters3 from '../assets/4vode/024vode.png';
+import fourWaters4 from '../assets/4vode/034vode.png';
 
 export const IMAGES_BY_SLUG: { [key: string]: ImageMetadata[] } = {
   dnk: [dnk1, dnk2, dnk3, dnk4],
@@ -40,9 +46,10 @@ export const IMAGES_BY_SLUG: { [key: string]: ImageMetadata[] } = {
     vojvodina3,
     vojvodina4,
   ],
-  'sok-koridor': [sokKoridor],
+  'sok-koridor': [sokKoridor1, sokKoridor2],
   nqode: [nqode1, nqode2, nqode3, nqode4, nqode5],
   puzzle: [puzzle1, puzzle2],
+  fourWaters: [fourWaters1, fourWaters2, fourWaters3, fourWaters4],
 };
 
 export const worksWithImages = works.map((work) => ({
