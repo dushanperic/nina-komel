@@ -1,44 +1,72 @@
 [
   {
     "id": 1,
-    "title": "Na istom zadatku",
+    "title": "On the same mission",
     "slug": "na-istom-zadatku",
     "category": "Book",
-    "images": []
+    "images": [],
+    "description": "The catalog On the Same Mission: DANUBE presents works by artists who critically reflecton the Danube, exploring its natural, cultural,and symbolic significance. Designed as a 'textual river, it guides the audience through diverse artistic expressions and collective actions, fostering interaction while highlighting the importance of preserving the river’s natural and cultural heritage.",
+    "publisher": "The project On the Same Mission: DANUBE was published by the Goethe-Institut in collaboration with SOK Cooperative Gallery.",
+    "tools": "Adobe Photoshop, Adobe Indesign"
   },
   {
     "id": 2,
     "title": "DNK",
     "slug": "dnk",
     "category": "Brand Design",
-    "images": []
+    "description": "DNK is a compact yet powerful visual identity for a tattoo and piercing studio. A distinctive logo, carefully selected color palette, and defined photography style reflect the brand’s authenticity and precision. Special attention was given to the design of piercing packaging, ensuring consistency and a striking visual experience.",
+    "images": [],
+    "tools": "Adobe Ilustrator, Adobe Photoshop"
   },
   {
     "id": 3,
     "title": "Vojvodina cook book",
     "slug": "vojvodina-cook-book",
     "category": "Book",
-    "images": []
+    "images": [],
+    "description": "The design of My Vojvodina Cookbook is inspired by traditional Vojvodina embroidered textiles, bringing an authentic touch of heritage. The book features 25 recipes accompanied by illustrations that resemble hand-written and hand-drawn notes from our grandmothers. Each recipe represents a village in Vojvodina, creating a unique culinary map of this rich and diverse region. This project celebrates and preserves the multicultural heritage of Vojvodina through its flavors, stories, and traditions.",
+    "publisher": "Design by kitchenandgoodwolf studio",
+    "tools": "Adobe Ilustrator, Adobe Indesign"
   },
   {
     "id": 4,
     "title": "Sok koridor",
     "slug": "sok-koridor",
     "category": "Posters",
-    "images": []
+    "images": [],
+    "description": "A series of posters for the 2021 season at the SOK Koridor outdoor gallery in Novi Sad. The visual inspiration for the posters stems from the passageway where the gallery is located, reflecting the unique character and atmosphere of the space.",
+    "publisher": "Sok Gallery",
+    "tools": "Adobe Illustrator, Adobe Photoshop"
   },
   {
     "id": 5,
     "title": "NQODE",
     "slug": "nqode",
     "category": "Indentity/Brand",
-    "images": []
+    "images": [],
+    "description": "Nqode is more than a software company—we are innovators driven by curiosity and bold ideas. Our visual identity reflects this philosophy through a dynamic and modern design, focused on the future. A combination of vibrant accents, technology-inspired elements, and the company logo shapes a brand that symbolizes progress, adaptability, and human-centered innovation. In this project, visual dynamics have been developed through carefully designed patterns and graphics, enhancing the impression of technology. The photography direction is aligned with the colors and environment, creating a cohesive and recognizable aesthetic.",
+    "publisher": "nQode",
+    "tools": "Adobe Photoshop, Adobe Illustrator"
   },
   {
     "id": 6,
     "title": "Puzzle",
     "slug": "puzzle",
     "category": "Print / Puzzle",
-    "images": []
+    "images": [],
+    "description": "This design is created for young engineers, combining fun and learning through puzzles.The packaging and puzzle feature a robot with a bird, sparking creativity and problem-solving skills in children.With vibrant visuals and engaging details, this set encourages kids to explore engineering in an exciting way.",
+    "publisher": "HTEC group",
+    "tools": "Adobe Illustrator, Adobe Photoshop"
+  },
+  {
+    "id": 7,
+    "title": "4 Waters",
+    "slug": "fourWaters",
+    "category": "Brand Design / Website",
+    "images": [],
+    "description": "Four Waters is an independent community that serves as a meeting point and a refuge for people ready to share, play, imagine, learn through experimentation, and take action. This website showcases various collective activities in nature, collaborative building, programming, crafts, and interaction with the local community. Our goal is to nurture love for the land and develop our capacities for giving and receiving. We celebrate hospitality, collective care, shared knowledge, collaboration, continuous curiosity, and balance between action and stillness. The website presents a platform for inspiration and engagement in ecological and artistic social projects that strengthen community and sustainability.",
+    "meta": "Website designed by Nina Komel, Bojana Ranković, Jelena Prljević and Miloš Bojović, developed by Dejan Marković",
+    "publisher": "4 wathers",
+    "tools": "Figma"
   }
 ]

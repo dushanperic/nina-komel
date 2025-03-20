@@ -14,7 +14,7 @@ import { worksWithImages } from '../constants/images-data';
     getSlideCounterString,
   } from '../utils/common';
 
-  document.addEventListener('astro:page-load', () => {
+  window.addEventListener('load', () => {
     Swiper.use([Navigation]);
 
     works.forEach((element) => {
