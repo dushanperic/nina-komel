@@ -1,5 +1,4 @@
 ---
-import { ClientRouter, fade } from 'astro:transitions';
 import '../styles/global.css';
 const BASE_URL = import.meta.env.BASE_URL;
 ---
@@ -42,11 +41,9 @@ const BASE_URL = import.meta.env.BASE_URL;
 
     <title>Nina Komel</title>
     <meta name="description" content="Nina Komel works" />
-    <ClientRouter />
   </head>
   <body
     class="lg:flex lg:flex-col lg:justify-between lg:h-full p-[var(--space-base)]"
-    transition:animate={fade({ duration: '400ms' })}
   >
     <slot />
   </body>
