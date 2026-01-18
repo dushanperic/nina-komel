@@ -10,6 +10,24 @@ export function getStaticPaths() {
 
 const { work: slug } = Astro.params;
 const work = worksWithImages.find((el) => el.slug === slug);
+
+const anim = {
+  old: {
+    name: 'leave',
+    duration: '250ms',
+    easing: 'ease-in',
+  },
+  new: {
+    name: 'enter',
+    duration: '250ms',
+    easing: 'ease-in-out',
+  },
+};
+
+const customTransition = {
+  forwards: anim,
+  backwards: anim,
+};
 ---
 
 <WorkLayout title={work?.title}>
@@ -34,6 +52,7 @@ const work = worksWithImages.find((el) => el.slug === slug);
       </div>
       <div
         class="swiper work-swiper w-full max-h-full bg-[#000000] order-1 lg:order-2"
+        transition:animate={customTransition}
       >
         <div class="swiper-wrapper">
           {
@@ -52,7 +71,7 @@ const work = worksWithImages.find((el) => el.slug === slug);
         >
           <div class="relative w-full h-full cursor-none">
             <p
-              class="counter-copy counter-cursor opacity-0 group-hover:opacity-100 absolute select-none text-3xl text-[var(--accent)]"
+              class="counter-copy counter-cursor opacity-0 group-hover:opacity-100 absolute select-none text-3xl text-[var(--foreground)] mix-blend-multiply"
             >
             </p>
           </div>
@@ -62,7 +81,7 @@ const work = worksWithImages.find((el) => el.slug === slug);
         >
           <div class="relative w-full h-full cursor-none">
             <p
-              class="counter-copy counter-cursor whitespace-nowrap opacity-0 group-hover:opacity-100 absolute select-none text-3xl text-[var(--accent)]"
+              class="counter-copy counter-cursor whitespace-nowrap opacity-0 group-hover:opacity-100 absolute select-none text-3xl text-[var(--foreground)] mix-blend-multiply"
             >
             </p>
           </div>
@@ -79,15 +98,14 @@ const work = worksWithImages.find((el) => el.slug === slug);
     handleCursorCopyPosition,
     getSlideCounterString,
   } from '../../utils/common';
-  import 'swiper/css';
 
-  window.addEventListener('load', () => {
+  const init = () => {
     const counterCursors = Array.from(
-      document.querySelectorAll('.counter-cursor')
+      document.querySelectorAll('.counter-cursor'),
     ) as Array<HTMLParagraphElement>;
 
     const counterCopy = Array.from(
-      document.querySelectorAll('.counter-copy')
+      document.querySelectorAll('.counter-copy'),
     ) as Array<HTMLParagraphElement>;
 
     Swiper.use([Navigation, Pagination, Scrollbar]);
@@ -124,28 +142,31 @@ const work = worksWithImages.find((el) => el.slug === slug);
 
     if (prevBtn) {
       prevBtn.addEventListener('mousemove', (e: MouseEvent) =>
-        handleCursorCopyPosition(e, prevBtn, counterCursors)
+        handleCursorCopyPosition(e, prevBtn, counterCursors),
       );
     }
 
     if (nextBtn) {
       nextBtn.addEventListener('mousemove', (e: MouseEvent) =>
-        handleCursorCopyPosition(e, nextBtn, counterCursors)
+        handleCursorCopyPosition(e, nextBtn, counterCursors),
       );
     }
 
-    return () => {
+    document.addEventListener('astro:before-swap', () => {
       if (prevBtn) {
-        prevBtn.remove('mousemove', (e: MouseEvent) =>
-          handleCursorCopyPosition(e, prevBtn, counterCursors)
+        prevBtn.removeEventListener('mousemove', (e: MouseEvent) =>
+          handleCursorCopyPosition(e, prevBtn, counterCursors),
         );
       }
 
       if (nextBtn) {
-        nextBtn.remove('mousemove', (e: MouseEvent) =>
-          handleCursorCopyPosition(e, nextBtn, counterCursors)
+        nextBtn.removeEventListener('mousemove', (e: MouseEvent) =>
+          handleCursorCopyPosition(e, nextBtn, counterCursors),
         );
       }
-    };
-  });
+    });
+  };
+
+  init();
+  document.addEventListener('astro:after-swap', () => init());
 </script>
