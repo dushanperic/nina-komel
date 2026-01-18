@@ -14,16 +14,16 @@ import { worksWithImages } from '../constants/images-data';
     getSlideCounterString,
   } from '../utils/common';
 
-  window.addEventListener('load', () => {
+  const init = () => {
     Swiper.use([Navigation]);
 
     works.forEach((element) => {
       const counterCopyElements = Array.from(
-        document.querySelectorAll(`.counter-copy-${element.id}`)
+        document.querySelectorAll(`.counter-copy-${element.id}`),
       ) as Array<HTMLParagraphElement>;
 
       const counterCursorElements = Array.from(
-        document.querySelectorAll(`.counter-cursor-${element.id}`)
+        document.querySelectorAll(`.counter-cursor-${element.id}`),
       ) as Array<HTMLParagraphElement>;
 
       const swiper = new Swiper(`.swiper-${element.id}`, {
@@ -50,38 +50,41 @@ import { worksWithImages } from '../constants/images-data';
       });
 
       const prevBtn = document.querySelector(
-        `.swiper-button-prev-${element.id}`
+        `.swiper-button-prev-${element.id}`,
       ) as any;
 
       const nextBtn = document.querySelector(
-        `.swiper-button-next-${element.id}`
+        `.swiper-button-next-${element.id}`,
       ) as any;
 
       if (prevBtn) {
         prevBtn.addEventListener('mousemove', (e: MouseEvent) =>
-          handleCursorCopyPosition(e, prevBtn, counterCursorElements)
+          handleCursorCopyPosition(e, prevBtn, counterCursorElements),
         );
       }
 
       if (nextBtn) {
         nextBtn.addEventListener('mousemove', (e: MouseEvent) =>
-          handleCursorCopyPosition(e, nextBtn, counterCursorElements)
+          handleCursorCopyPosition(e, nextBtn, counterCursorElements),
         );
       }
 
-      return () => {
+      document.addEventListener('astro:before-swap', () => {
         if (prevBtn) {
-          prevBtn.remove('mousemove', (e: MouseEvent) =>
-            handleCursorCopyPosition(e, prevBtn, counterCursorElements)
+          prevBtn.removeEventListener('mousemove', (e: MouseEvent) =>
+            handleCursorCopyPosition(e, prevBtn, counterCursorElements),
           );
         }
 
         if (nextBtn) {
-          nextBtn.remove('mousemove', (e: MouseEvent) =>
-            handleCursorCopyPosition(e, nextBtn, counterCursorElements)
+          nextBtn.removeEventListener('mousemove', (e: MouseEvent) =>
+            handleCursorCopyPosition(e, nextBtn, counterCursorElements),
           );
         }
-      };
+      });
     });
-  });
+  };
+
+  init();
+  document.addEventListener('astro:after-swap', () => init());
 </script>
